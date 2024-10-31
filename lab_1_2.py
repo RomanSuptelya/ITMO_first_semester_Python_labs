@@ -2,7 +2,7 @@
 '''Вариант 1'''
 
 
-'''ВТОРОЕ ЗАДАНИЕ (Узор шахматы)'''
+'''ЗАДАНИЕ 2 (Узор шахматы)'''
 
 
 import time
@@ -30,7 +30,7 @@ def draw_line(color): # печатает 1 узор
 
 def draw_chess():
     colors = [202, 45]
-    for i in range(1): # while True - бесконечный цикл
+    while True: # - бесконечный цикл
         for color in colors: # смена цветов
             draw_line(color) # go to def draw_line
             time.sleep(3) # задержка по времени
