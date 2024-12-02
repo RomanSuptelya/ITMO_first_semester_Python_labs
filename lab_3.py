@@ -57,8 +57,7 @@ window.geometry("3000x2500")  # устанавливаем размеры окн
 
 #Добавим изображение
 canvas = Canvas(window, height=650, width=750)
-img = PhotoImage(file = "/Users/romansuptelya/Downloads/"
-                        "vlr8o8qg9boxmndg7a9uxyw39mnsj9e3 2.png")
+img = PhotoImage(file = "vlr8o8qg9boxmndg7a9uxyw39mnsj9e3 2.png")
 image = canvas.create_image(0, 0, anchor='nw',image=img)
 canvas.grid(row=2,column=1)
 
