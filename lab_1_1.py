@@ -20,5 +20,5 @@ WIDTH = 6 # Ширина флага
 
 for j in range(WIDTH):
         if __name__ == '__main__':  # запуск программы
-                print(f'{BLUE}{' '*LENGTH}{WHITE}{' '*LENGTH}{RED}'
-                      f'{' '*LENGTH}{END}')
+                print(f"{BLUE}{' '*LENGTH}{WHITE}{' '*LENGTH}{RED}"
+                      f"{' '*LENGTH}{END}")

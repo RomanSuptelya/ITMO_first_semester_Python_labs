@@ -23,9 +23,9 @@ with open('sequence') as file: # открыть файл
 
 
 if __name__ == '__main__':
-    print(f'{ORANGE}{' '*(count_positive_numbers // SCALE)}{CLEAR_COLOR}'
-          f'{' '}{count_positive_numbers}{' '}{'положительные'}')
-    print(f'{BLUE}{' '*(count_negative_numbers // SCALE)}{CLEAR_COLOR}'
-          f'{' '}{count_negative_numbers}{' '}{'отрицательные'}')
+    print(f"{ORANGE}{' '*(count_positive_numbers // SCALE)}{CLEAR_COLOR}"
+          f"{' '}{count_positive_numbers}{' '}{'положительные'}")
+    print(f"{BLUE}{' '*(count_negative_numbers // SCALE)}{CLEAR_COLOR}"
+          f"{' '}{count_negative_numbers}{' '}{'отрицательные'}")
 
 

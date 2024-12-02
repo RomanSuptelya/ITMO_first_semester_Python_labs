@@ -18,14 +18,14 @@ def draw_line(color): # печатает 1 узор
     width = SIDE  # высота квадратика
 
     for i in range(width): # 1-ая строка узора
-        print(f'{SET_COLOR}{color}m{length}{CLEAR_COLOR}{length}'
-              f'{SET_COLOR}{color}m{length}{CLEAR_COLOR}')
+        print(f"{SET_COLOR}{color}m{length}{CLEAR_COLOR}{length}"
+              f"{SET_COLOR}{color}m{length}{CLEAR_COLOR}")
     for i in range(width): # 2-ая строка узора
-        print(f'{length}{SET_COLOR}{color}m{length}{CLEAR_COLOR}')
+        print(f"{length}{SET_COLOR}{color}m{length}{CLEAR_COLOR}")
     for i in range(width): # 3-ая строка узора
-        print(f'{SET_COLOR}{color}m{length}{CLEAR_COLOR}{length}'
-              f'{SET_COLOR}{color}m{length}{CLEAR_COLOR}')
-    print(f'\u001b[{SIDE*3}A', end='') # переместить курсор наверх
+        print(f"{SET_COLOR}{color}m{length}{CLEAR_COLOR}{length}"
+              f"{SET_COLOR}{color}m{length}{CLEAR_COLOR}")
+    print(f"\u001b[{SIDE*3}A", end='') # переместить курсор наверх
 
 
 def draw_chess():

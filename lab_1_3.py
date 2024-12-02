@@ -13,7 +13,7 @@ LINE = ' '
 def draw_line(offset=0): # печатает 1 прямоугольник
     #offset = 0 # отступ от края
 
-    print(f'{' ' * offset}{SET_COLOR}{LINE}{CLEAR_COLOR}')
+    print(f"{' ' * offset}{SET_COLOR}{LINE}{CLEAR_COLOR}")
 
 
 def draw_parabola():
