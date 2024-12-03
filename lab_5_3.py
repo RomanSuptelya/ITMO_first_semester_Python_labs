@@ -2,7 +2,7 @@
 '''Вариант 1'''
 
 
-'Строчка с данными: ID, фамилия, электронная почта, дата регистрации и сайт'
+'Строчка с данными: id, фамилия, электронная почта, дата регистрации и сайт'
 
 
 import re
@@ -53,11 +53,11 @@ with open('task3') as file:
         line = re.sub(r'com/', r'com/ ', line)
         line = re.sub(r'info/', r'info/ ', line)
 
-        #print(line) # разделенные фрагменты кроме ID
+        #print(line) # разделенные фрагменты кроме id
 
 
-# НАЙТИ ID_DRAFT:
-ID_DRAFT = re.findall(r'\s\d+\s', line)
+# НАЙТИ id_draft:
+id_draft = re.findall(r'\s\d+\s', line)
 # НАЙТИ SURNAME:
 surname = re.findall(r'\s[A-Z][a-z]+\s|\s[A-Z][a-z]+[^\s]', line)
 # НАЙТИ EMAIL:
@@ -68,63 +68,63 @@ date_registration = re.findall(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', line)
 website = re.findall(r'[a-z]{4,5}://\S+', line)
 
 
-ID_DRAFT = [int(x) for x in ID_DRAFT]
+id_draft = [int(x) for x in id_draft]
 
-ID = []
-ID.append(ID_DRAFT[0]) # т.к не войдет в range
+id = []
+id.append(id_draft[0]) # т.к не войдет в range
 
-for i in range(1, len(ID_DRAFT)-1):
-    k = ID_DRAFT[i-1]
-    x = ID_DRAFT[i]
-    y = ID_DRAFT[i+1]
+for i in range(1, len(id_draft)-1):
+    k = id_draft[i-1]
+    x = id_draft[i]
+    y = id_draft[i+1]
 
-    ID.append(x)
+    id.append(x)
 
     # разделить ДВА ДВУХЗНАЧНЫХ числа
     if len(str(x)) == 4 and len(str(k)) == 2:
-        ID.remove(x)
+        id.remove(x)
         a = str(x)[:2]
         b = str(x)[2:]
 
-        ID.append(a)
-        ID.append(b)
+        id.append(a)
+        id.append(b)
 
     # разделить ДВА ТРЕХЗНАЧНЫХ числа
     if ((len(str(x)) == 6 and len(str(y)) == 3) or
             (len(str(x)) == 6 and len(str(k)) == 3)):
-        ID.remove(x)
+        id.remove(x)
         a = str(x)[:3]
         b = str(x)[3:]
 
-        ID.append(a)
-        ID.append(b)
+        id.append(a)
+        id.append(b)
 
     # разделить ДВА ЧЕТЫРЕХЗНАЧНЫХ числа
     if ((len(str(x)) == 8 and len(str(y)) == 4) or
             (len(str(x)) == 8 and len(str(k)) == 4)):
-        ID.remove(x)
+        id.remove(x)
         a = str(x)[:4]
         b = str(x)[4:]
 
-        ID.append(a)
-        ID.append(b)
+        id.append(a)
+        id.append(b)
 
     # разделить ЧЕТЫРЕХЗНАЧНОЕ и ОДНОЗНАЧНОЕ числа
     if len(str(x)) == 5:
-        ID.remove(x)
+        id.remove(x)
         a = str(x)[:4]
         b = str(x)[4:]
 
-        ID.append(a)
-        ID.append(b)
+        id.append(a)
+        id.append(b)
 
-ID = [int(x) for x in ID]
+id = [int(x) for x in id]
 
-ID.append(ID_DRAFT[-1]) # т.к не вошел в range
+id.append(id_draft[-1]) # т.к не вошел в range
 
 
 '''
-print(len(ID))
+print(len(id))
 print(len(surname))
 print(len(email))
 print(len(date_registration))
@@ -133,7 +133,7 @@ print(len(website))
 
 
 if __name__ == '__main__':
-    print('ID фамилия электронная_почта дата_регистрации сайт')
-    for i in range(len(ID)):
-        print(ID[i], surname[i], email[i], date_registration[i], website[i])
+    print('id фамилия электронная_почта дата_регистрации сайт')
+    for i in range(len(id)):
+        print(id[i], surname[i], email[i], date_registration[i], website[i])
 
