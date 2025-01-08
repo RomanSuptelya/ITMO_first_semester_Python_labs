@@ -16,5 +16,4 @@ with open('task1-en') as file:
                                 ,line)
 
 
-        if __name__ == '__main__':
-            print(n, res)
+        print(n, res)

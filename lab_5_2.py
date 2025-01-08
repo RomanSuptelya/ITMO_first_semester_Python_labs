@@ -11,7 +11,7 @@ with open('task2.html') as file:
     n = 0  # счетчик номера строки
     for line in file:
         n = n + 1  # счетчик номера строки
-        res = re.findall(r'<[aA-zZ]{1,}.{0,}?>',line)
+        res = re.findall(r'<[aA-zZ]+ |<[aA-zZ]+>',line)
             # . - любой символ
             # ? - берем первое попавшееся вхождение
 
