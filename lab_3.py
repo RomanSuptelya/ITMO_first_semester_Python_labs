@@ -1,4 +1,3 @@
-
 '''Вариант 1'''
 
 
@@ -8,6 +7,11 @@
 from tkinter import *
 import string
 import random
+
+
+FONT_SIZE = 20
+WIDTH = 800
+HEIGHT = 600
 
 
 def mixed_parol(mix_0=0, mix_1=0, mix_2=0):
@@ -41,7 +45,7 @@ def mixed_parol(mix_0=0, mix_1=0, mix_2=0):
     # f'{mix_0}-{mix_1}-{mix_2}' - три блока случайных символов
 
     lbl_1 = Label(window, text=f'{mix_0}-{mix_1}-{mix_2}',
-                  font=("Arial Bold", 50))  # создаем текстовую метку
+                  font=("Arial Bold", FONT_SIZE))  # создаем текстовую метку
     lbl_1.grid(column=0, row=2)  # размещаем текст в окне
 
 
@@ -52,17 +56,19 @@ def clicked(): # функция, которую нужно выполнить п
 
 window = Tk()  # создаем корневой объект - окно; функция window = функция root
 window.title("Приложение на Tkinter")  # устанавливаем заголовок окна
-window.geometry("3000x2500")  # устанавливаем размеры окна
+window.geometry(f"{WIDTH}x{HEIGHT}")  # устанавливаем размеры окна
+window.configure(background='#5dadd2')
+
 
 
 #Добавим изображение
-canvas = Canvas(window, height=650, width=750)
+canvas = Canvas(window, height=HEIGHT, width=WIDTH)
 img = PhotoImage(file = "vlr8o8qg9boxmndg7a9uxyw39mnsj9e3 2.png")
 image = canvas.create_image(0, 0, anchor='nw',image=img)
-canvas.grid(row=2,column=1)
+canvas.place(x=0, y=0)
 
 lbl = Label(window, text="Генератор паролей",
-            font=("Arial Bold", 50))  # создаем текстовую метку
+            font=("Arial Bold", FONT_SIZE))  # создаем текстовую метку
 lbl.grid(column=0, row=0) # размещаем текст в окне
 
 btn = Button(window, text="Создать пароль", command=clicked)  # создаем кнопку
