@@ -3,7 +3,7 @@ import json
 import requests
 
 city_name = "Saint Petersburg"
-key = "b9158e1eea86784a759ba1435993be35"
+key = ""
 response = requests.get (f"https://api.openweathermap.org/data/2.5/weather?"
                          f"q={city_name}&appid={key}")
 result = json.loads(response.text)
